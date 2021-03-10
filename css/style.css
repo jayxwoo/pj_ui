@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+/* ====================
+[links]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+    --grey: rgba(179, 179, 179);
+}
+
+
+/* ====================
+[modules]
+======================= */
+
+
+/* ====================
+[layouts & styles]
+======================= */
+/* global */
+html { font-family: Arial; }
+body { color: var(--black); display: flex; justify-content: center; align-items: center; }
+
+/* carousel */
+.carousel-container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+.carousel-wrapper { width: 100%; display: flex; justify-content: center; align-items: center; gap: 1rem; }
+.carousel-viewer { width: 100%; overflow: hidden; border-radius: 10px; }
+.carousel-track { display: flex; transition: transform 0.3s ease-in-out; }
+.carousel-img { width: 100%; object-fit: cover; object-position: center; }
+.carousel-btn { border: none; outline: none; background-color: transparent; cursor: pointer; transition: transform 0.1s ease-in-out; }
+.carousel-btn:active { transform: scale(1.5); }
+.carousel-btn-icon { font-size: 2rem; color: var(--black); }
+.carousel-indicator-container { display: flex; gap: 0.5rem; }
+.carousel-indicator { border: none; outline: none; background-color: var(--grey); width: 10px; height: 10px; border-radius: 50%; cursor: pointer; transition: transform 0.1s ease-in-out; }
+.carousel-indicator:active { transform: scale(1.5); }

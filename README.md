@@ -1,6 +1,14 @@
-# Project - UI
-- Develop intuitive & interactive UIs.
-- Each UI can be viewed from the branches.
+# 1. Carousel-basic
+## Features
+- sliding transition
+- navigation buttons (left, right)
+- indicators
+- fully responsive
 
-## List
-1. Carousel-basic
+## Skills
+- HTML
+- CSS
+- JavaScript
+
+## Screenshots
+![screenshot-01](./screenshots/screenshot.png)
