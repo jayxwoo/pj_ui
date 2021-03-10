@@ -110,4 +110,7 @@ const main = function () {
         });
     });
 };
-main();
+
+window.addEventListener('load', () => {
+    main();
+});
