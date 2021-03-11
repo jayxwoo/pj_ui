@@ -32,7 +32,7 @@ body { color: var(--black); display: flex; justify-content: center; align-items:
 .carousel-wrapper { width: 100%; display: flex; justify-content: center; align-items: center; gap: 1rem; }
 .carousel-viewer { width: 100%; overflow: hidden; border-radius: 10px; }
 .carousel-track { display: flex; transition: transform 0.3s ease-in-out; }
-.carousel-img { width: 100%; object-fit: cover; object-position: center; }
+.carousel-img { width: 100%; }
 .carousel-btn { border: none; outline: none; background-color: transparent; cursor: pointer; transition: transform 0.1s ease-in-out; }
 .carousel-btn:active { transform: scale(1.5); }
 .carousel-btn-icon { font-size: 2rem; color: var(--black); }
