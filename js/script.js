@@ -2,111 +2,149 @@
 import './default.js';
 
 // ========== DOM references ==========
-const carouselTrack = document.querySelector('.carousel-track');
+const carouselImgContainer = document.querySelector('.carousel-img-container');
 const carouselBtns = document.querySelectorAll('.carousel-btn');
 const carouselBtnLeft = document.querySelector('.carousel-btn-left');
 const carouselBtnRight = document.querySelector('.carousel-btn-right');
-const carouselViewer = document.querySelector('.carousel-viewer');
 const carouselIndicatorContainer = document.querySelector('.carousel-indicator-container');
 
 // ========== global variables ==========
+const totalImgCount = 10;
 const carouselImgs = [];
-const NumOfCarouselImgs = 10;
 let currImgNum = 1;
 const indicators = [];
 
 // ========== script ==========
+// ===== Functions =====
+// update active indicator
+const updateActiveIndicator = function (currImgNum) {
+    for (let i = 0; i < totalImgCount; i++) {
+        indicators[i].classList.remove('carousel-indicator--active');
+    };
+    indicators[currImgNum - 1].classList.add('carousel-indicator--active');
+};
+// show current carousel image
+const showCurrCarouselImg = function (i, carouselImgContainerWidth, currImgNum) {
+    carouselImgs[i].style.transform = `translateX(${carouselImgContainerWidth - (carouselImgContainerWidth * currImgNum)}px)`;
+};
+// show and hide carousel btns
+const showHideCarouselBtns = function (currImgNum) {
+    if (currImgNum === totalImgCount) {
+        carouselBtnLeft.style.visibility = 'visible';
+        carouselBtnRight.style.visibility = 'hidden';
+    } else if (currImgNum === 1) {
+        carouselBtnRight.style.visibility = 'visible';
+        carouselBtnLeft.style.visibility = 'hidden';
+    } else {
+        carouselBtnRight.style.visibility = 'visible';
+        carouselBtnLeft.style.visibility = 'visible';
+    };
+};
+
+// ===== Load images =====
+for (let i = 0; i < totalImgCount; i++) {
+    const img = new Image();
+    img.src = `./img/carousel-img/${i + 1}.jpg`;
+    img.classList.add('carousel-img');
+    carouselImgs.push(img);
+    carouselImgContainer.append(img);
+};
+
 const main = function () {
-    // ===== Functions =====
-    // update indicators
-    const updateIndicator = function (currImgNum) {
-        indicators.forEach(indicator => {
-            indicator.style.backgroundColor = 'var(--grey)';
-        });
-        indicators[currImgNum-1].style.backgroundColor = 'var(--black)';
-    };
-    // show and hide carousel btns
-    const showHideCarouselBtn = function (currImgNum) {
-        if (currImgNum === 1) {
-            carouselBtnLeft.style.visibility = 'hidden';
-            carouselBtnRight.style.visibility = 'visible';
-        } else if (currImgNum === 10) {
-            carouselBtnRight.style.visibility = 'hidden';
-            carouselBtnLeft.style.visibility = 'visible';
-        } else {
-            carouselBtnLeft.style.visibility = 'visible';
-            carouselBtnRight.style.visibility = 'visible';
-        };
-    };
-    // control carousel track
-    const controlCarouselTrack = function (currImgNum) {
-        carouselTrack.style.transform = `translateX(${carouselViewerWidth - carouselViewerWidth * (currImgNum)}px)`;
-    };
-
-    // =====Load images=====
-    for (let i = 0; i < NumOfCarouselImgs; i++) {
-        const img = new Image();
-        img.src = `./img/carousel-img/${i + 1}.jpg`;
-        img.classList.add('carousel-img');
-        carouselTrack.appendChild(img);
-    };
-
-    // =====Calculate carousel viewer width=====
-    // init
-    let carouselViewerWidth = carouselViewer.clientWidth;
+    // ===== Calculute image container width =====
+    let carouselImgContainerWidth = carouselImgContainer.clientWidth;
     // on resize
     window.addEventListener('resize', () => {
-        carouselViewerWidth = carouselViewer.clientWidth;
+        carouselImgContainerWidth = carouselImgContainer.clientWidth;
     });
-    // When carousel btn is clicked
+
+    // ===== Calculate image height =====
+    let carouselImgHeight = carouselImgs[0].clientHeight;
+    // on resize
+    window.addEventListener('resize', () => {
+        carouselImgHeight = carouselImgs[0].clientHeight;
+    });
+
+    // ===== Set height for image and image-container =====
+    for (let i = 1; i < totalImgCount; i++) {
+        carouselImgs[i].style.height = `${carouselImgHeight}px`;
+    };
+    carouselImgContainer.style.height = `${carouselImgHeight}px`;
+    // on resize
+    window.addEventListener('resize', () => {
+        for (let i = 1; i < totalImgCount; i++) {
+            carouselImgs[i].style.height = `${carouselImgHeight}px`;
+        };
+        carouselImgContainer.style.height = `${carouselImgHeight}px`;
+    });
+
+    // ===== Position images =====
+    for (let i = 0; i < totalImgCount; i++) {
+        const leftValue = carouselImgContainerWidth * i;
+        carouselImgs[i].style.left = `${leftValue}px`;
+    };
+    // on resize
+    window.addEventListener('resize', () => {
+        // align carousel imgs
+        for (let i = 0; i < totalImgCount; i++) {
+            const leftValue = carouselImgContainerWidth * i;
+            carouselImgs[i].style.left = `${leftValue}px`;
+        };
+        // show carousel img
+        for (let i = 0; i < totalImgCount; i++) {
+            showCurrCarouselImg(i, carouselImgContainerWidth, currImgNum);
+        };
+    });
+
+    // ===== Carousel nav buttons =====
     carouselBtns.forEach(carouselBtn => {
-        carouselBtn.addEventListener('click', e => {
-            // control carousel track
-            if (e.target.classList.contains('carousel-btn-right') || e.target.classList.contains('carousel-icon-right')) {
-                if (currImgNum < NumOfCarouselImgs) {
+        carouselBtn.addEventListener('click', (e) => {
+            if (carouselBtn.classList.contains('carousel-btn-right')) {
+                if (currImgNum < totalImgCount) {
                     currImgNum++;
-                    // control carousel track
-                    controlCarouselTrack(currImgNum);
+                    // show carousel img
+                    for (let i = 0; i < totalImgCount; i++) {
+                        showCurrCarouselImg(i, carouselImgContainerWidth, currImgNum);
+                    };
                 };
-            } else if (e.target.classList.contains('carousel-btn-left') || e.target.classList.contains('carousel-icon-left')) {
+            } else if (carouselBtn.classList.contains('carousel-btn-left')) {
                 if (currImgNum > 1) {
                     currImgNum--;
-                    // control carousel track
-                    controlCarouselTrack(currImgNum);
+                    // show carousel img
+                    for (let i = 0; i < totalImgCount; i++) {
+                        showCurrCarouselImg(i, carouselImgContainerWidth, currImgNum);
+                    };
                 };
             };
-            // update indicators
-            updateIndicator(currImgNum);
-            // show and hide carousel btns
-            showHideCarouselBtn(currImgNum);
+            // udate active indicator
+            updateActiveIndicator(currImgNum);
+            // show and hide carousel btn
+            showHideCarouselBtns(currImgNum);
         });
     });
 
-    // =====Keep carousel-track at the same position on resize=====
-    window.addEventListener('resize', () => {
-        console.log(currImgNum);
-        controlCarouselTrack(currImgNum);
-    });
-
-    // =====Indicator (dots)=====
-    // create indicator elements
-    for (let i = 0; i < NumOfCarouselImgs; i++) {
-        const indicator = document.createElement('button');
+    // ===== Indicators =====
+    // create indicators
+    for (let i = 0; i < totalImgCount; i++) {
+        const indicator = document.createElement('div');
         indicator.classList.add('carousel-indicator');
         indicators.push(indicator);
-        carouselIndicatorContainer.appendChild(indicator);
+        carouselIndicatorContainer.append(indicator);
     };
-    // show active indicator (init)
-    indicators[currImgNum-1].style.backgroundColor = 'var(--black)';
-    // show correct image when clicked
+    // update active indicator
+    updateActiveIndicator(currImgNum);
+    // show corresponding img when an indicator is clicked
     indicators.forEach(indicator => {
         indicator.addEventListener('click', (e) => {
             currImgNum = indicators.indexOf(e.target) + 1;
-            controlCarouselTrack(currImgNum);
-            // update indicators
-            updateIndicator(currImgNum);
-            // show and hide carousel btns
-            showHideCarouselBtn(currImgNum);
+            // show carousel img
+            for (let i = 0; i < totalImgCount; i++) {
+                showCurrCarouselImg(i, carouselImgContainerWidth, currImgNum);
+            };
+            // udate active indicator
+            updateActiveIndicator(currImgNum);
+            // show and hide carousel btn
+            showHideCarouselBtns(currImgNum);
         });
     });
 };
