@@ -27,7 +27,7 @@ ul[class], ol[class] { list-style: none; }
 fieldset { border: none; }
 
 /* stop all animations and transitions on resizing */
-.resize-animation-stopper * { animation: none !important; transition: none !important; }
+.resize-animation-stopper * { animation: none !important; -webkit-animation: none !important; -moz-animation: none !important; transition: none !important; -webkit-transition: none !important; -moz-transition: none; }
 
 /* hide elements for accessibility (a11y) */
 .a11y-hidden { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }

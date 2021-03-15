@@ -160,6 +160,7 @@ function main() {
         // functions
         function touchStart(e) {
             isDragging = true;
+            dragValue = 0;
             // remove transition class on img
             carouselImgs.forEach(img => {
                 img.classList.remove('carousel-img--transition');
@@ -252,10 +253,15 @@ function main() {
             });
             // touch events (mobile)
             img.addEventListener('touchstart', e => {
-                e.preventDefault();
+                // // prevent triggering mouse events
+                // e.preventDefault();
+                
                 touchStart(e);
             });
             img.addEventListener('touchend', e => {
+                // prevent triggering mouse events
+                e.preventDefault();
+
                 touchEnd();
             });
             img.addEventListener('touchmove', e => {
