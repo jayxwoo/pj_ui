@@ -1,9 +1,10 @@
 # 1. Carousel-basic
 ## Features
-- sliding transition
-- navigation buttons (left, right)
-- indicators
-- fully responsive
+- Fully responsive
+- Navigate using left, right buttons
+    - opacity reduced at either ends
+- Navigate using indicators(dots)
+- Navigation using mouse and/or touch gestures
 
 ## Skills
 - HTML
@@ -11,6 +12,7 @@
 - JavaScript
 
 ## Screenshots
-![screenshot-01](./screenshots/screenshot.png)
-![screen-recording-01](./screenshots/screen-recording.gif)
+![screenshot-01](./screenshots/screenshot-01.png)
+![screen-recording-01](./screenshots/screen-recording-01.gif)
 ![screen-recording-02](./screenshots/screen-recording-02.gif)
+![screen-recording-03](./screenshots/screen-recording-03.gif)
