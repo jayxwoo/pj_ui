@@ -2,7 +2,7 @@
 import './default.js';
 
 // ========= Main =========
-function main() {
+(() => {
     // ====== DOM references ======
     const carouselImgContainer = document.querySelector('.carousel-img-container');
     const carouselBtns = document.querySelectorAll('.carousel-btn');
@@ -60,17 +60,17 @@ function main() {
         };
 
         // === Calculute image container width ===
-        let carouselImgContainerWidth = carouselImgContainer.clientWidth;
+        let carouselImgContainerWidth = carouselImgContainer.scrollWidth;
         // on resize
         window.addEventListener('resize', () => {
-            carouselImgContainerWidth = carouselImgContainer.clientWidth;
+            carouselImgContainerWidth = carouselImgContainer.scrollWidth;
         });
 
         // === Calculate image height ===
-        let carouselImgHeight = carouselImgs[0].clientHeight;
+        let carouselImgHeight = carouselImgs[0].scrollHeight;
         // on resize
         window.addEventListener('resize', () => {
-            carouselImgHeight = carouselImgs[0].clientHeight;
+            carouselImgHeight = carouselImgs[0].scrollHeight;
         });
 
         // === Set height for image and image-container ===
@@ -107,7 +107,7 @@ function main() {
         // === Carousel nav buttons ===
         carouselBtns.forEach(carouselBtn => {
             carouselBtn.addEventListener('click', (e) => {
-                if (carouselBtn.classList.contains('carousel-btn-right')) {
+                if (carouselBtn.classList.contains('carousel-btn-right') || e.target.classList.contains('carousel-icon-right')) {
                     if (currImgNum < totalImgCount) {
                         currImgNum++;
                         // show carousel img
@@ -115,7 +115,7 @@ function main() {
                             showCurrCarouselImg(i, carouselImgContainerWidth, currImgNum);
                         };
                     };
-                } else if (carouselBtn.classList.contains('carousel-btn-left')) {
+                } else if (carouselBtn.classList.contains('carousel-btn-left') || e.target.classList.contains('carousel-icon-left')) {
                     if (currImgNum > 1) {
                         currImgNum--;
                         // show carousel img
@@ -255,7 +255,7 @@ function main() {
             img.addEventListener('touchstart', e => {
                 // // prevent triggering mouse events
                 // e.preventDefault();
-                
+
                 touchStart(e);
             });
             img.addEventListener('touchend', e => {
@@ -272,5 +272,4 @@ function main() {
     window.addEventListener('load', () => {
         carousel();
     });
-};
-main();
+})();
