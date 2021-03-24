@@ -1,4 +1,4 @@
-# 1. Carousel-basic
+# 1. Carousel - basic
 ## Features
 - Fully responsive
 - Navigate using left, right buttons

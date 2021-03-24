@@ -60,10 +60,13 @@ import './default.js';
         };
 
         // === Calculute image container width ===
-        let carouselImgContainerWidth = carouselImgContainer.scrollWidth;
+        let carouselImgContainerWidth = carouselImgContainer.offsetWidth;
+        console.log(carouselImgContainer.offsetWidth);
+        console.log(carouselImgContainer.scrollWidth);
+        console.log(carouselImgContainer.clientWidth);
         // on resize
         window.addEventListener('resize', () => {
-            carouselImgContainerWidth = carouselImgContainer.scrollWidth;
+            carouselImgContainerWidth = carouselImgContainer.offsetWidth;
         });
 
         // === Calculate image height ===
