@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+/* ====================
+[Imports]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[Variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+}
+
+
+/* ====================
+[Modules]
+======================= */
+
+
+/* ====================
+[Layout & Style]
+======================= */
+/* Global */
+html { font-family: Arial; }
+body { color: var(--black); }
+
+/* Carousel */
+.section-carousel { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; }
+.carousel-container { width: 90%; max-width: 1000px; display: flex; align-items: center; }
+
+.carousel-frame { width: 100%; margin: 0 1rem; overflow: hidden; }
+.carousel-track { position: relative; overflow: scroll; display: flex; align-items: center; }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.carousel-track::-webkit-scrollbar { display: none; }
+/* Hide scrollbar for IE, Edge and Firefox */
+.carousel-track {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+.carousel-img-container { position: absolute; }
+.carousel-img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; border-radius: 1.5rem; transition: transform 0.3s ease-in-out; cursor: pointer; user-select: none; }
+.carousel-img:hover { transform: scale(1.1); }
+
+.carousel-modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.95); display: none; }
+.carousel-modal--active { display: flex; justify-content: center; align-items: center; } 
+.carousel-modal-btn { border: none; outline: none; position: absolute; top: 30px; right: 30px; background: transparent; cursor: pointer; }
+.carousel-modal-icon { color: white; font-size: 1.5rem; transition: transform 0.1s ease-in-out; }
+.carousel-modal-icon:active { transform: scale(2); }
+.carousel-modal-img { height: 60%; border-radius: 1.5rem; }
+
+.carousel-btn { outline: none; background-color: transparent; border: none; cursor: pointer; transition: transform 0.1s ease-in-out; }
+.carousel-btn:active { transform: scale(2); }
+.carousel-icon { font-size: 2rem; }
