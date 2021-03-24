@@ -1,12 +1,10 @@
-# 2. Carousel - wheel
+# 1. Carousel - basic
 ## Features
-- Scale up on hover ✔️
-- Click to open up a modal / lightbox ✔️
-- Click close button or backdrop to close modal ✔️
-- Horizontal scroll/swipe ✔️
-- Navigate using left, right nav buttons ✔️
-    - Move 3 images on a single click ✔️
-    - Reduce opacity when reached either ends ✔️
+- Fully responsive
+- Navigate using left, right buttons
+    - opacity reduced at either ends
+- Navigate using indicators(dots)
+- Navigation using mouse and/or touch gestures
 
 ## Skills
 - HTML
@@ -16,3 +14,5 @@
 ## Screenshots
 ![screenshot-01](./screenshots/screenshot-01.png)
 ![screen-recording-01](./screenshots/screen-recording-01.gif)
+![screen-recording-02](./screenshots/screen-recording-02.gif)
+![screen-recording-03](./screenshots/screen-recording-03.gif)
