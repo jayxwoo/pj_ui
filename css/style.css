@@ -44,10 +44,10 @@ scrollbar-width: none;  /* Firefox */
 .carousel-img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; border-radius: 1.5rem; transition: transform 0.3s ease-in-out; cursor: pointer; user-select: none; }
 .carousel-img:hover { transform: scale(1.1); }
 
-.carousel-modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.95); display: none; }
-.carousel-modal--active { display: flex; justify-content: center; align-items: center; } 
+.carousel-modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(255, 255, 255, 0.1); backdrop-filter: saturate(180%) blur(15px); -webkit-backdrop-filter: saturate(180%) blur(15px); transform: scale(0); transform-origin: center; transition: all 0.3s ease-in-out; }
+.carousel-modal--active { transform: scale(1); display: flex; justify-content: center; align-items: center; } 
 .carousel-modal-btn { border: none; outline: none; position: absolute; top: 30px; right: 30px; background: transparent; cursor: pointer; }
-.carousel-modal-icon { color: white; font-size: 1.5rem; transition: transform 0.1s ease-in-out; }
+.carousel-modal-icon { color: var(--black); font-size: 1.5rem; transition: transform 0.1s ease-in-out; }
 .carousel-modal-icon:active { transform: scale(2); }
 .carousel-modal-img { height: 60%; border-radius: 1.5rem; }
 
