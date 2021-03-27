@@ -1,6 +1,7 @@
 # Projects - UI
-- Develop intuitive & interactive UIs.
-- Each UI can be viewed from the branches.
+- Develop intuitive & interactive UI Components.
+- Each UI Components can be viewed from the branches.
 
 ## List
 1. Carousel-basic
+2. Carousel-wheel
