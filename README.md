@@ -1,7 +1,17 @@
-# Projects - UI
-- Develop intuitive & interactive UI Components.
-- Each UI Components can be viewed from the branches.
+# 3. Parallax - fixed
+## Screenshots
+![screenshot-01](./screenshots/screenshot-01.png)
+![screen-recording-01](./screenshots/screen-recording-01.gif)
 
-## List
-1. Carousel-basic
-2. Carousel-wheel
+## Features
+- Fixed parallax
+- Shift to normal background element for mobile browsers (including tablet)
+
+## Skills
+- HTML
+- CSS
+- JS
+
+## Notes
+- Fixed parallax can be achieved by using background-attachment: fixed;, but this effect does not work on mobile and tablet browsers.
+- Fallback stylings for parallax should be applied for small screens.

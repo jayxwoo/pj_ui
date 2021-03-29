@@ -1,0 +1,80 @@
+@charset 'utf-8';
+
+/* ====================
+[Imports]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[Variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+}
+
+
+/* ====================
+[Modules]
+======================= */
+
+
+/* ====================
+[Layout & Style]
+======================= */
+/* Global */
+html { font-family: Arial; }
+body { color: var(--black); text-align: center; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+/* Header, Footer */
+.header, .footer {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: lightgrey;
+    padding: 1rem;
+}
+
+/* Section */
+.section {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+}
+.section-1-text {
+    color: turquoise;
+    margin-top: 0.5rem;
+}
+
+/* Parallax */
+.parallax {
+    width: 100vw;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax-mobile {
+    background-attachment: scroll;
+}
+.parallax p {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.parallax-1 {
+    background-image: url(../img/bg-01.jpeg);
+}
+.parallax-2 {
+    background-image: url(../img/bg-02.jpeg);
+}
