@@ -5,6 +5,7 @@
 
 ## Features
 - Parallax effect on a hero background image
+- Parallax image scrolls at a different speed
 
 ## Skills
 - HTML
