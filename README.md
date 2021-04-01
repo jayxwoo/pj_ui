@@ -1,8 +1,18 @@
-# Projects - UI
-- Develop intuitive & interactive UI Components.
-- Each UI Components can be viewed from the branches.
+# 4. Parallax - hero
+## Screenshots
+![screenshot-01](./screenshots/screenshot-01.png)
+![screen-recording-01](./screenshots/screen-recording-01.gif)
 
-## List
-1. Carousel - basic
-2. Carousel - wheel
-3. Parallax - fixed
+## Features
+- Parallax effect on a hero background image
+
+## Skills
+- HTML
+- CSS
+- JS
+
+## Notes
+- Image can be inserted either as a
+    - background-img → manipulate `background-position-y` in JS to control parallax
+    - img → manipulate `transform: translateY()` in JS to control parallax
+- It is more **semantic** to use background image for the hero.
