@@ -1,0 +1,38 @@
+@charset 'utf-8';
+
+/* ====================
+[Imports]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[Variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+}
+
+
+/* ====================
+[Modules]
+======================= */
+
+
+/* ====================
+[Layout & Style]
+======================= */
+/* Global */
+html { font-family: Arial; }
+body { color: var(--black); }
+
+/* Hero - bg */
+.hero-parallax { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; background-image: url(../img/hero.jpeg); background-size: cover; background-repeat: no-repeat; position: relative; z-index: -1; }
+.hero-text-container { text-align: center; color: white; padding: 1rem; }
+.hero-header { font-size: 3rem; } 
+.hero-text b { text-decoration: underline; }
+
+/* Section-1 */
+.section-1 { width: 100%; height: 200vh; background-color: var(--black); text-align: center; color: white; z-index: 10; }
+.section-1-text-container { padding: 1rem; position: sticky; top: 0; }
+.section-1-header { font-size: 3rem; margin-bottom: 1rem; }
