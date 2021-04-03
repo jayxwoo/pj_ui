@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+/* ====================
+[Imports]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[Variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+}
+
+
+/* ====================
+[Modules]
+======================= */
+
+
+/* ====================
+[Layout & Style]
+======================= */
+/* Global */
+html { font-family: Arial; }
+body { color: var(--black); }
+p { font-size: 2rem; text-transform: uppercase; font-weight: bold; line-height: 1; }
+.app-container { width: 100%; max-width: 1440px; margin: 0 auto; }
+
+/* Header & Footer */
+.header, .footer { width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; text-align: center; background-color: tan; color: white; }
+
+/* Section */
+.section { width: 100%; height: 700px; display: flex; justify-content: center; align-items: center; text-align: center; z-index: 10; }
+
+/* Parallax */
+.parallax { width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; background-size: cover; background-repeat: no-repeat; }
+.parallax p { color: white; }
+.parallax-1 { background-image: url(../img/parallax-1.jpeg); }
+.parallax-2 { background-image: url(../img/parallax-2.jpeg); }
+@media (max-width: 700px) {
+    .parallax { height: 250px; }
+}
