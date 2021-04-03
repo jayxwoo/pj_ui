@@ -6,3 +6,5 @@
 1. Carousel - basic
 2. Carousel - wheel
 3. Parallax - fixed
+4. Parallax - hero
+5. Parallax - full width
