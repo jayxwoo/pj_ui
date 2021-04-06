@@ -8,3 +8,4 @@
 3. Parallax - fixed
 4. Parallax - hero
 5. Parallax - full width
+6. Parallax - partial width
