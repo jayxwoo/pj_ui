@@ -1,0 +1,55 @@
+@charset 'utf-8';
+
+/* ====================
+[Imports]
+======================= */
+@import url('default.css');
+
+
+/* ====================
+[Variables]
+======================= */
+:root {
+    --black: rgba(20, 20, 20, 1);
+    --lightgrey: rgba(245, 245, 245, 1);
+    --grey: rgba(130, 130, 130, 1);
+}
+
+
+/* ====================
+[Modules]
+======================= */
+
+
+/* ====================
+[Layout & Style]
+======================= */
+/* Global */
+html { font-family: Arial; }
+body { color: var(--black); }
+img { display: block; }
+
+/* App Container */
+.app-container { width: 100%; max-width: 1440px; margin: 0 auto; }
+
+/* Header, Footer */
+.header, .footer { width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; background-color: rosybrown; }
+.header p, .footer p { color: white; font-size: 2rem; font-weight: bold; }
+
+/* Sections */
+.section { width: 100%; height: 800px; display: flex; justify-content: center; align-items: center; background-color: var(--lightgrey); }
+.section p { font-size: 2rem; font-weight: bold; color: var(--grey); }
+
+/* Parallax Section */
+.parallax { width: 100%; display: flex; justify-content: space-between; padding: 1.5rem; }
+
+.parallax-img-container { width: 50%; position: relative; }
+.parallax-1-img-container { margin-right: 1.5rem; }
+.parallax-2-img-container { margin-left: 1.5rem; }
+.parallax-img { width: 100%; border-radius: 10px; }
+.parallax-1-img { position: absolute; top: 0; left: 0; }
+.parallax-2-img { position: absolute; top: 100%; left: 0; }
+
+.parallax-text-container { width: 50%; }
+.parallax-text-container h2 { margin-bottom: 0.5rem; }
+.parallax-text-container p { text-align: justify; }
