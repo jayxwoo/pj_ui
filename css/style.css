@@ -46,7 +46,7 @@ img { display: block; }
 .parallax-img-container { width: 50%; position: relative; }
 .parallax-1-img-container { margin-right: 1.5rem; }
 .parallax-2-img-container { margin-left: 1.5rem; }
-.parallax-img { width: 100%; border-radius: 10px; }
+.parallax-img { width: 100%; border-radius: 10px; will-change: top; }
 .parallax-1-img { position: absolute; top: 0; left: 0; }
 .parallax-2-img { position: absolute; top: 100%; left: 0; }
 
