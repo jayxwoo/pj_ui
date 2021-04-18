@@ -9,3 +9,4 @@
 4. Parallax - hero
 5. Parallax - full width
 6. Parallax - partial width
+7. Dark and Light Mode - react.js
