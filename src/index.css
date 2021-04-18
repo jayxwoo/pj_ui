@@ -1,0 +1,109 @@
+/* Default */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+:root {
+  --black: rgba(20, 20, 20, 1);
+  --darkgrey: rgba(70, 70, 70, 1);
+  --grey: rgba(130, 130, 130, 1);
+  --lightgrey: rgba(235, 235, 235, 1);
+}
+
+/* App */
+.App {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: white;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.menu-group {
+  list-style: none;
+  display: flex;
+  margin-top: 1.5rem;
+}
+.menu-item {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+/* FrameworkList */
+.framework-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid var(--black);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.frame-list-group {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.frame-list-item {
+  margin: 1rem 0;
+  background: var(--lightgrey);
+  color: var(--black);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+.login-status {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--black);
+  background: rgba(0, 191, 96, 0.5);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+/* ThemeToggle, LoginToggle */
+.toggle-cont {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.theme-toggle, .auth-toggle {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--black);
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+.theme-toggle:hover, .auth-toggle:hover {
+  background-color: var(--darkgrey);
+  color: white;
+  border: none;
+}
