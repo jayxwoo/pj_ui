@@ -1,6 +1,7 @@
 # 7. Dark and Light Mode - react.js
 ## Screenshots
 ![screenshot-01](./screenshots/screenshot-01.png)
+![screenshot-02](./screenshots/screenshot-01.png)
 ![screen-recording-01](./screenshots/screen-recording-01.gif)
 
 ## Features
